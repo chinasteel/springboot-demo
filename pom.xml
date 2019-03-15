@@ -119,10 +119,11 @@
                 <directory>${basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
                 <includes>
-                    <include>**/*.xml</include>
                     <include>**/application*.yml</include>
                     <include>**/application*.yaml</include>
                     <include>**/application*.properties</include>
+                    <include>mybatis/generatorConfig.xml</include>
+                    <include>mybatis/mybatis-config.xml</include>
                 </includes>
             </resource>
         </resources>
@@ -139,6 +140,8 @@
                 <version>2.7</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <!-- spring boot 会自定义@@作为delimiters 默认${} @都行}-->
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
                 </configuration>
             </plugin>
             <!-- 设置compiler插件，字符编码，jdk编译版本 -->

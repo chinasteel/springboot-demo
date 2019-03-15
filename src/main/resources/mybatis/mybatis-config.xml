@@ -6,6 +6,5 @@
     <settings>
         <setting name="defaultExecutorType" value="SIMPLE"/>
         <setting name="defaultStatementTimeout" value="${mybatis.defaultStatementTimeout}"/>
-        <!--<setting name="defaultStatementTimeout" value="5"/>-->
     </settings>
 </configuration>
