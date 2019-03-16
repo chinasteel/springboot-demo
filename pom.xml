@@ -117,6 +117,13 @@
         <resources>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>mybatis/mapper/**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
                 <includes>
                     <include>**/application*.yml</include>

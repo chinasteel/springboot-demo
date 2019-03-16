@@ -21,9 +21,9 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = {"com.example.demo.mapper"}, sqlSessionTemplateRef = "sqlSessionTemplate")
 public class SqlSessionFactoryConfig {
 
-    @Value("${mybatis.mapperLocations}")
+    @Value("${mybatis.mapper-locations}")
     private String mapperLocations;
-    @Value("${mybatis.configLocation}")
+    @Value("${mybatis.config-location}")
     private String configLocation;
 
     @Bean
