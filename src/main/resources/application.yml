@@ -39,12 +39,41 @@ spring:
       two:
         initial-size: 2
         max-active: 2
+  redis:
+#    host: ${redis.host}
+#    port: ${redis.port}
+#    password: ${redis.password}
+    lettuce:
+      pool:
+        min-idle: 2
+    cluster:
+      nodes: 192.168.3.138:7000,192.168.3.138:7001,192.168.3.138:7002,192.168.3.138:7003,192.168.3.138:7004,192.168.3.138:7005
 
 #log 日志配置
 logging:
   level:
     root: ${log.level}
     com:
+      shimao:
+        iot:
+          udp: info
       example:
         demo: ${log.com.example.demo.level}
 
+redis:
+  serverType: ${redis.serverType}
+
+udp:
+  group-map:
+    group-1: 224.1.1.1:9000
+    group-2: 224.1.1.2:9000
+    group-3: 127.0.0.1:9000
+  multicast-groups:
+    - group-1
+    - group-2
+  max-rcv-buf-allocator: 2048
+  port: 9000
+  max-wait-times: 5
+  secret: true
+  secret-key: 892f0b160826fdf2ec083d55e91db457
+  sign: true
