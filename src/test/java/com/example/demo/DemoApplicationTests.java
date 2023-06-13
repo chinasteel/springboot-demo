@@ -47,6 +47,16 @@ public class DemoApplicationTests {
                     .body(personDO).build());
         }
 
+        personDO.setName("steel");
+        udpClient.sendData("group-4", UdpMessageDTO.builder()
+                .bizCode("test2")
+                .timestamp(System.currentTimeMillis())
+                .dataType("object")
+                .reqId("93jfjfdlsxxxxxxx")
+                .sysCode("yzs")
+                .version("v1.0.0")
+                .body(personDO).build());
+
         Thread.sleep(5000);
     }
 

@@ -71,6 +71,7 @@ udp:
   multicast-groups:
     - group-1
     - group-2
+    - group-4
   max-rcv-buf-allocator: 2048
   port: 9000
   max-wait-times: 5
